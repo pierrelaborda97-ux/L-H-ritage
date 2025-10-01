@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px '.SF NS'; color: #0e0e0e}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.s1 {font: 14.0px '.AppleSystemUIFontMonospaced'}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="fr"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Golden Globe – Carnet de bord interactif&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Carnet de voyage digital : Capitaine, escales, produits rares (Saint‑Denis, Abidjan) et innovation SolarTram à Sydney. Authenticité, rareté, durabilité." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--bg:#0b1221;<span class="Apple-converted-space">        </span>/* bleu nuit */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--bg-alt:#0f1730;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--card:#111a34;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--text:#e9eef7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--muted:#b8c3d9;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--gold:#d4af37;<span class="Apple-converted-space">      </span>/* doré chic */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--accent:#47d1b8;<span class="Apple-converted-space">    </span>/* accent éco/futuriste */</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--shadow: 0 10px 25px rgba(0,0,0,.25);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--radius: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--radius-lg: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--container: 1200px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Reset simple */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>*,*::before,*::after{box-sizing:border-box}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg),var(--bg-alt));color:var(--text);font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,system-ui,sans-serif;}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>img{max-width:100%;display:block}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>a{color:inherit;text-decoration:none}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Layout */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>header.hero{position:relative;overflow:hidden;padding:90px 0 60px;border-bottom:1px solid rgba(255,255,255,.06)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>header .bg {position:absolute;inset:0;opacity:.25;background:radial-gradient(80% 60% at 50% 20%, #2b3f80 0%, transparent 60%), url('') center/cover no-repeat;filter: saturate(1.1);} /* vous pourrez remplacer l'url par une image */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>nav.top{position:sticky;top:0;z-index:50;background:rgba(11,18,33,.7);backdrop-filter: blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>nav .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.3px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.brand .mark{width:36px;height:36px;border-radius:12px;background:conic-gradient(from 140deg at 50% 50%, var(--gold), #f6e27a, var(--gold));box-shadow: var(--shadow)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.brand small{display:block;color:var(--muted);font-weight:500}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.menu{display:flex;flex-wrap:wrap;gap:10px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.menu a{padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.08);color:var(--muted)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.menu a:hover, .menu a.active{color:var(--text);border-color:rgba(255,255,255,.25)}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero h1{font-size: clamp(28px, 4vw, 48px);margin:0 0 12px 0;line-height:1.1}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero p.lead{max-width:820px;color:var(--muted);font-size: clamp(15px, 2vw, 18px)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.chip{border:1px solid rgba(255,255,255,.12);color:var(--muted);padding:8px 12px;border-radius:999px}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>section{scroll-margin-top:90px;padding:60px 0}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>h2.section-title{font-size: clamp(22px, 3vw, 34px);margin:0 0 10px 0}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>p.section-sub{color:var(--muted);margin:0 0 24px 0}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Cards grid */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.grid{display:grid;gap:20px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media(min-width:700px){.grid.cols-2{grid-template-columns:1fr 1fr}}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media(min-width:1000px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card h3{margin:0 0 8px 0;font-size:22px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.muted{color:var(--muted)}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Feature line */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.feature{display:flex;gap:16px;align-items:flex-start;margin:8px 0}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.feature .dot{width:10px;height:10px;border-radius:50%;background:var(--gold);flex:0 0 auto;margin-top:8px}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Timeline */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.timeline{position:relative;padding-left:20px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.timeline::before{content:"";position:absolute;left:6px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom, var(--gold), transparent)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.t-item{position:relative;margin:18px 0;padding-left:16px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.t-item::before{content:"";position:absolute;left:-6px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--gold)}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Badges/table like */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kvs{display:grid;grid-template-columns:1fr;gap:10px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media(min-width:720px){.kvs{grid-template-columns:repeat(2,1fr)}}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kv{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.kv b{color:#fff}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Footer */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>footer{padding:50px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Buttons */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.14)}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn.primary{background:linear-gradient(135deg, var(--gold), #f6e27a);color:#1a1520;border:none}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn.ghost:hover{border-color:#fff;color:#fff}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Media blocks */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.media{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#0c1326}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.media .ph{aspect-ratio:16/9;display:grid;place-items:center;color:var(--muted)}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Accordions */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>details{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>summary{cursor:pointer;font-weight:600}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;nav class="top" role="navigation" aria-label="Navigation principale"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="brand" aria-label="Golden Globe"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mark" aria-hidden="true"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;Golden Globe&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;small&gt;Carnet de bord interactif&lt;/small&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="menu" id="menu"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#accueil" class="active"&gt;Accueil&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#capitaine"&gt;Capitaine&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#escales"&gt;Escales &amp; Produits&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#sydney"&gt;Sydney – SolarTram&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#apropos"&gt;À propos&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;header id="accueil" class="hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="bg" aria-hidden="true"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;Golden Globe — entre cultures, rareté &amp; innovation&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="lead"&gt;Un site vitrine qui rassemble tout notre travail : la capitaine et son univers, les produits rares découverts à Saint‑Denis et Abidjan, et l’innovation durable &lt;b&gt;SolarTram&lt;/b&gt; imaginée pour Sydney. Un carnet de voyage premium, accessible et immersif.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="chips" role="list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="chip" role="listitem"&gt;Authenticité&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="chip" role="listitem"&gt;Rareté&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="chip" role="listitem"&gt;Durabilité&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="chip" role="listitem"&gt;Storytelling&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="btn primary" href="#capitaine" aria-label="Découvrir la capitaine"&gt;Découvrir la Capitaine&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="btn ghost" href="#escales" aria-label="Voir les escales et produits"&gt;Voir les escales &amp; produits&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;main&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- CAPITAINE --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="capitaine"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;La Capitaine – Rosa Delmare&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="section-sub"&gt;Ambitieuse, visionnaire, authentique. Une leadeuse qui transmet, aventurière, amoureuse des matières nobles et des histoires qui se transmettent.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid cols-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Son histoire&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="muted"&gt;Née au bord de l’Atlantique, elle a grandi entre cartes marines et récits de voyages. Aujourd’hui, capitaine de son propre voilier, elle navigue de Monaco aux Baléares. Pour elle, le vrai luxe réside dans la &lt;b&gt;valeur&lt;/b&gt; et l’&lt;b&gt;histoire&lt;/b&gt; des choses : rareté, beauté et sens priment sur la quantité. Une montre n’est pas un accessoire : c’est un héritage qui symbolise maîtrise du temps et élégance.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="kvs" style="margin-top:12px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="kv"&gt;&lt;b&gt;Typographie associée&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Sérif élégante pour les titres, sans‑sérif moderne pour le corps&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="kv"&gt;&lt;b&gt;Accessoire signature&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Lunettes de vision nocturne&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="kv"&gt;&lt;b&gt;Elle aime&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Produits locaux, nobles et rares ; nouvelles cultures ; sortir de sa zone de confort&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="kv"&gt;&lt;b&gt;Elle n’aime pas&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Médiocrité, low‑cost, yachts (elle est voilier)&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="media card" aria-label="Portrait / Illustration de la capitaine"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="ph"&gt;Image/Illustration à insérer ici&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ESCALES &amp; PRODUITS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="escales"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;Escales &amp; Produits&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="section-sub"&gt;Des pièces et élixirs choisis pour leur héritage, leur rareté et leur élégance.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Saint‑Denis --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card" style="margin-bottom:20px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Saint‑Denis — « L’Illusion d’Ivresse » (Rhum arrangé premium)&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="grid cols-2" style="margin-top:10px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Description&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Rhum vieux de caractère infusé de vanille Bourbon et d’épices réunionnaises rares. Présentation haut de gamme, esprit millésime.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Propriété « magique »&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Confère une aura magnétique et une élégance naturelle pendant quelques heures.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Cibles&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Entrepreneure 32 ans ; dirigeant 40 ans ; voyageur/explorateur 30 ans.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Prix&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;120 € la bouteille (70 cl)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Slogan&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;L’élixir qui révèle l’invisible.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="media"&gt;&lt;div class="ph"&gt;Visuel du packaging&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Abidjan : Pagne baoulé --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card" style="margin-bottom:20px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Abidjan — Pagne tissé en soie baoulé&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="grid cols-2" style="margin-top:10px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Pourquoi ce choix&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Pièce d’art textile artisanale, savoir‑faire ancestral, symbole de patience et de transmission.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Cible&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Clientèle aisée recherchant confort, raffinement et exclusivité.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Prix&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;1 200 € (édition numérotée, certificat d’authenticité)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Distribution&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Galeries/boutiques de luxe, ventes privées sur invitation.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="media"&gt;&lt;div class="ph"&gt;Coffret haut de gamme&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Abidjan : Coffret acajou + parfum --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card" style="margin-bottom:20px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Abidjan — Coffret bois d’acajou &amp; parfum&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="grid cols-2" style="margin-top:10px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Description&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Essence tropicale précieuse (rouge profond, veinage élégant). Héritage d’ébénisterie et construction navale ; déclinaison olfactive exclusive.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Cibles&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Artisans/designers du luxe, maisons de parfumerie de niche, collectionneurs.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Prix&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Édition numérotée : 180–220 € ; version découverte : 60–80 €.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Distribution&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;E‑commerce sélectif, parfumeries exclusives, concept stores, salons &amp; événements nautiques.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="media"&gt;&lt;div class="ph"&gt;Visuel coffret&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Abidjan : Karité premium --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Abidjan — Beurre de karité premium&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="grid cols-2" style="margin-top:10px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Description&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Matière première noble aux bienfaits reconnus ; production locale et authentique.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Cible&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Clientèle raffinée, sensible à la qualité et aux produits naturels rares.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Prix&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Pot 50 ml : ~30 € ; 100 ml : ~60 €.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;&lt;b&gt;Packaging &amp; Distribution&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Pots verre élégants ; concept stores, hôtels haut de gamme &amp; e‑commerce.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="media"&gt;&lt;div class="ph"&gt;Mockup packaging&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- SYDNEY / INNOVATION --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="sydney"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;Sydney — Innovation « SolarTram »&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="section-sub"&gt;Mobilité urbaine durable : tramway aérien suspendu, 100 % solaire, autonome, accessible 24 h/24. Slogan : &lt;b&gt;Le soleil vous transporte&lt;/b&gt;.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid cols-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Fonctionnalités clés&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;Cabines autonomes pilotées par IA ; flux continu toutes les ~2 min.&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;Alimentation solaire + batteries ; zéro émission locale.&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;Réseau interconnecté (métro, bus) ; stations accessibles PMR &amp; vélos.&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="feature"&gt;&lt;span class="dot"&gt;&lt;/span&gt;&lt;div&gt;Expérience panoramique unique au‑dessus des axes routiers.&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Parcours utilisateur&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="timeline"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="t-item"&gt;&lt;b&gt;1. Accès station&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Ascenseur / escalator / rampe vélo.&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="t-item"&gt;&lt;b&gt;2. Validation&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Carte, abonnement ou QR code.&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="t-item"&gt;&lt;b&gt;3. Embarquement&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Cabine automatique toutes les 2 minutes, 24 h/24.&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="t-item"&gt;&lt;b&gt;4. Destination&lt;/b&gt;&lt;br&gt;&lt;span class="muted"&gt;Choix sur écran tactile ; trajet rapide et sans attente.&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid cols-3" style="margin-top:20px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card"&gt;&lt;h3&gt;Persona&lt;/h3&gt;&lt;p class="muted"&gt;&lt;b&gt;Sophie&lt;/b&gt;, 32 ans, cadre tech en périphérie de Sydney. Moderne, éco‑responsable et curieuse des nouvelles technologies ; cherche un transport rapide, confortable et durable.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card"&gt;&lt;h3&gt;Valeur ajoutée&lt;/h3&gt;&lt;p class="muted"&gt;Gain de temps (pas de bouchons), zéro pollution, accessibilité universelle, symbole d’innovation pour la ville.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card"&gt;&lt;h3&gt;Communication&lt;/h3&gt;&lt;p class="muted"&gt;Teasing → Lancement événement → Amplification digitale ; promesse « 1 trajet SolarTram = 100 voitures de moins dans les bouchons ».&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;details style="margin-top:16px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;summary&gt;Voir la stratégie détaillée&lt;/summary&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="muted"&gt;Double cible : convaincre les institutions (Smart City, CO₂) et séduire le grand public via un storytelling visuel. Packs touristiques, partenariats locaux et contenus immersifs.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/details&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- A PROPOS / CONCLUSION --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="apropos"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;À propos du projet&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="section-sub"&gt;Le Golden Globe est un voyage où se croisent traditions, matières nobles et visions d’avenir. Ce site rassemble nos livrables pour une lecture claire, élégante et partageable.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid cols-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Objectifs&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="muted"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Augmenter l’engagement par une narration immersive&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Valoriser les livrables comme vitrine premium&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Inspirer : authenticité, rareté, innovation&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Rubriques&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="muted"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Accueil&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Capitaine&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Escales &amp; Produits&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Sydney – SolarTram&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Style&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="muted"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Palette bleu nuit &amp; doré&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Ambiance premium &amp; maritime&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Responsive mobile/desktop&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card" style="margin-top:20px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3&gt;Fichiers &amp; images&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="muted"&gt;Remplacez les blocs « Image/Illustration » par vos visuels (mockups produits, persona, rendus SolarTram). Vous pouvez aussi intégrer des vidéos courtes pour renforcer le storytelling.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="grid cols-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;b&gt;Golden Globe&lt;/b&gt;&lt;br/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="muted"&gt;Carnet de bord interactif – © 2025&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="text-align:right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a class="btn ghost" href="#accueil" aria-label="Retour en haut"&gt;↑ Haut de page&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Scroll spy très léger pour activer le lien de menu courant</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const sections = [...document.querySelectorAll('main section, header.hero')];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const menuLinks = [...document.querySelectorAll('#menu a')];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const activate = (id)=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>menuLinks.forEach(a=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>a.classList.toggle('active', a.getAttribute('href') === <span class="s1">#${id}</span>);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const io = new IntersectionObserver(entries =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>entries.forEach(entry =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(entry.isIntersecting){</p>
+<p class="p1"><span class="Apple-converted-space">          </span>activate(entry.target.id || 'accueil');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>},{threshold:0.6});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>sections.forEach(sec =&gt; io.observe(sec));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Accessibilité : focus visible sur Tab</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.addEventListener('keydown', (e)=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(e.key === 'Tab'){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.body.classList.add('show-focus');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
